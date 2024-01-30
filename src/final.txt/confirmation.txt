@@ -1,0 +1,54 @@
+// src/components/ConfirmationPage.js
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+const ConfirmationPage = () => {
+  const location = useLocation();
+  const { selectedDate, selectedSlot, selectedGuests, user } = location.state || {};
+
+  useEffect(() => {
+    // Check if user details are available
+    if (user) {
+      // Simulate creating a reservation by making a POST request to the API
+      const createReservation = async () => {
+        try {
+          const response = await fetch('/api/reservations', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              slot_id: selectedSlot?.id,
+              customer_id: 1, // Replace with the actual customer ID (if available)
+              customer_name: user.name, // Use the user's name from signup
+              contact_number: user.phoneNumber, // Use the user's phone number from signup
+              booking_date: selectedDate,
+              num_guests: selectedGuests,
+            }),
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            console.log('Reservation created successfully:', data);
+          } else {
+            console.error('Error creating reservation:', response.statusText);
+          }
+        } catch (error) {
+          console.error('Error creating reservation:', error.message);
+        }
+      };
+
+      createReservation();
+    }
+  }, [selectedDate, selectedSlot, selectedGuests, user]);
+
+  return (
+    <div>
+      <h2>Booking Confirmation</h2>
+      <p>Congratulations on successfully booking a seat at your favorite restaurant through FineDiner!</p>
+      {/* ... (rest of the component remains the same) */}
+    </div>
+  );
+};
+
+export default ConfirmationPage;

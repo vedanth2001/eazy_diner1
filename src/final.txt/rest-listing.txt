@@ -1,0 +1,74 @@
+// src/components/RestaurantListing.js
+import React, { useState, useEffect } from 'react';
+import RestaurantCard from './RestaurantCard';
+
+const RestaurantListing = () => {
+  const [cuisineType, setCuisineType] = useState('');
+  const [location, setLocation] = useState('');
+  const [title, setTitle] = useState('');
+  const [restaurants, setRestaurants] = useState([]);
+
+  useEffect(() => {
+    // Fetch restaurants from the API when the component mounts
+    const fetchRestaurants = async () => {
+      try {
+        const response = await fetch('/api/restaurants');
+        if (response.ok) {
+          const data = await response.json();
+          setRestaurants(data);
+        } else {
+          console.error('Error fetching restaurants:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error fetching restaurants:', error.message);
+      }
+    };
+
+    fetchRestaurants();
+  }, []); // Run the effect only once on component mount
+
+  // Filter restaurants based on search criteria
+  const filteredRestaurants = restaurants.filter((restaurant) => {
+    const cuisineMatch = restaurant.cuisine.toLowerCase().includes(cuisineType.toLowerCase());
+    const locationMatch = restaurant.location.toLowerCase().includes(location.toLowerCase());
+    const titleMatch = restaurant.name.toLowerCase().includes(title.toLowerCase());
+    return cuisineMatch && locationMatch && titleMatch;
+  });
+
+  return (
+    <div>
+      <h2>RESTAURANT LISTING</h2>
+      {/* Search Bar */}
+      <div className="search-rest">
+        <input
+          type="text"
+          placeholder="Search by Cuisine Type"
+          value={cuisineType}
+          onChange={(e) => setCuisineType(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Search by Location"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Search by Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+      </div>
+      {/* Display filtered restaurants */}
+      <div className="restaurant-list">
+        {filteredRestaurants.map((restaurant) => (
+          <div key={restaurant.id}>
+            <RestaurantCard restaurant={restaurant} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default RestaurantListing;

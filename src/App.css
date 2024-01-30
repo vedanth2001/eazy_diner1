@@ -1,0 +1,421 @@
+/* src/App.css */
+/* App.css */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.app-container {
+  position: relative;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./landingimage.jpeg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -1;
+}
+
+.content-container {
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+  max-width: 800px;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+
+
+
+h1 {
+  color: #007bff;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: crimson;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Landing Page Styles */
+.landing-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 0 10px;
+  background-color:#ff7f00;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Welcome Text Styles */
+.company-name {
+  color: #333; /* Changed to black */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.welcome-text {
+  margin-top: 20px;
+  color: #333; /* Changed to black */
+  font-size: 18px;
+}
+
+/* Discount Text Styles */
+.discount-text {
+  margin-top: 20px;
+  color: #333; /* Changed to black */
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Restaurant Card Styles */
+.restaurant-list {
+  /* text-align: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.restaurant-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  width: 300px;
+  cursor: pointer;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.05);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-details {
+  padding: 15px;
+}
+
+/* Restaurant Details Styles */
+.restaurant-details-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.restaurant-details {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.restaurant-details img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.restaurant-details p {
+  margin: 10px 0;
+  color: #333;
+}
+/* ... (previous styles) */
+
+/* Search Bar Styles */
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #948c8c;
+  border-radius: 5px;
+}
+/* ... (previous styles) */
+
+/* Book A Table Button Styles */
+.book-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff7f00; /* Orange color */
+  color: #fff; /* White color */
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.book-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+/* ... (previous styles) */
+
+/* Header Styles */
+.header {
+  background-color: #000; /* Black color */
+  color: #fff; /* White color */
+  padding: 30px 0;
+  text-align: center;
+}
+
+.header-text {
+  text-decoration: navy;
+  color: #fff; /* White color */
+  font-size: 56px;
+  font-weight: bold;
+}
+
+.details-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff8c00; /* Orange color */
+  color: #fff; /* White color */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.details-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+/* ... (previous styles) */
+
+/* Review Booking Button Styles */
+.review-booking-button {
+  display: block;
+  width: 100%;
+  padding: 15px; /* Adjust as needed */
+  background-color: #ff7f00; /* Orange color */
+  color: #fff; /* White color */
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.review-booking-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Add this to your CSS styles */
+.orange-button {
+  display: block;
+  width: 100%;
+  padding: 15px; /* Adjust as needed */
+  background-color: #ff7f00; /* Orange color */
+  color: #fff; /* White color */
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.orange-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+.burger{
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: left;
+}
+/* Add or update this part in your existing CSS */
+
+/* ... (previous styles) */
+
+/* Restaurant Details Styles */
+.restaurant-details-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.restaurant-details {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.restaurant-details img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.restaurant-details p {
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Search Bar Styles */
+.search-bar {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #948c8c;
+  border-radius: 5px;
+}
+
+/* Updated styles for booking slots */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Align buttons horizontally */
+  gap: 10px; /* Add spacing between buttons */
+}
+
+li {
+  margin: 0;
+}
+
+button {
+  padding: 10px; /* Adjust as needed */
+  background-color: #ff7f00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.search-rest {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.search-rest input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #948c8c;
+  border-radius: 5px;
+}
+
+
+/* ... (previous styles) */
+
+/* ... (previous styles) */
+
+/* Restaurant Listing Styles */
+
+
+/* ... (other styles) */
+
+/* ... (other styles) */
+
+/* ... (other styles) */
+
+/* ... (other styles) */
+
+/* ... (other styles) */

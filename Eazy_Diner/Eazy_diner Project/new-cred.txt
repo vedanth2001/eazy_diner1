@@ -1,0 +1,83 @@
+Server: sql6.freemysqlhosting.net
+Name: sql6680075
+Username: sql6680075
+Password: a58lFBG49h
+Port number: 3306
+
+sql-table Description
+
+1. Restaurants Table
+Attributes:
+id (Primary Key)
+name
+image
+location
+cuisine_type
+created_at
+updated_at
+
+
+2. Slots Table
+Attributes:
+id (Primary Key)
+restaurant_id (Foreign Key referencing restaurants)
+start_time
+end_time
+capacity
+created_at
+updated_at
+
+
+3. Inventories Table
+Attributes:
+id (Primary Key)
+restaurant_id (Foreign Key referencing restaurants)
+slot_id (Foreign Key referencing slots)
+quantity
+created_at
+updated_at
+
+
+4. Customers Table
+Attributes:
+id (Primary Key)
+name
+email(Unique Key)
+password(Hashed)
+created_at
+updated_at
+
+
+5. Bookings Table
+Attributes:
+id (Primary Key)
+slot_id (Foreign Key referencing slots)
+customer_id(Foreign Key referencing customers)
+customer_name
+contact_number
+booking_date
+num_guests
+created_at
+updated_at
+
+
+
+CMD_LocalHost-Kill
+
+netstat -ano | findstr :3000
+taskkill /PID  /F
+
+Postman_testing
+
+Restaurant_details
+http://localhost:3000/api/restaurants/1-3
+Restaurant_listing
+http://localhost:3000/api/restaurants
+Creating_Reservation
+http://localhost:3000/api/reservations
+Login_Sign_In
+http://localhost:3000/api/login
+Sign_Up_Registration 
+http://localhost:3000/api/signup
+
+
